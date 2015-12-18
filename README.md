@@ -24,3 +24,4 @@ android studio gradle使用
 使用如下
 view.setProgress(progress);
 但是要在UI线程使用 内部用的Invalidate()而不是postInvalidate()  
+
