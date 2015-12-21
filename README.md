@@ -11,6 +11,7 @@ android studio gradle使用
 
     compile 'com.daemon:aroundcircleview2:1.0.1'
  
+         textBgColor 初始线条颜色 一般为白色
 	<com.daemon.aroundcircleview.AroundCircleView
         android:id="@+id/acv_icon"
         android:layout_width="100dp"
@@ -19,6 +20,7 @@ android studio gradle使用
         android:layout_gravity="center"
         android:src="@mipmap/pas"
         app:textColor="#147856"
+	app:textBgColor="#00ff00"
         app:textSize="2dp" />
         
 使用如下

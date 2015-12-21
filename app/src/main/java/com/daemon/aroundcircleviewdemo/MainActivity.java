@@ -1,7 +1,5 @@
 package com.daemon.aroundcircleviewdemo;
 
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -9,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.view.animation.LinearInterpolator;
 import android.widget.RelativeLayout;
 
 import com.daemon.aroundcircleview.AroundCircleView;
@@ -42,11 +39,7 @@ public class MainActivity extends AppCompatActivity {
         rl_bg = (RelativeLayout) findViewById(R.id.rl_bg);
 
 
-        ObjectAnimator animator = ObjectAnimator.ofFloat(acvIcon,"rotation",0,360);
-        animator.setDuration(8000);
-        animator.setInterpolator(new LinearInterpolator());
-        animator.setRepeatCount(ValueAnimator.INFINITE);
-        animator.start();
+
 
         Bitmap image = ((BitmapDrawable)acvIcon.getDrawable()).getBitmap();
 

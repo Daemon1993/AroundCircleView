@@ -19,8 +19,10 @@ android studio gradle使用
         android:layout_gravity="center"
         android:src="@mipmap/pas"
         app:textColor="#147856"
+	app:textBgColor="#00ff00"
         app:textSize="2dp" />
         
 使用如下
 view.setProgress(progress);
 但是要在UI线程使用 内部用的Invalidate()而不是postInvalidate()  
+
