@@ -4,14 +4,17 @@
  圆角显示图片  来自CircleImageView
  在基础上修改 让其可以周边动态显示进度
 
-![](https://github.com/Daemon1993/AroundCircleView/blob/master/GIF.gif)
+![](https://github.com/Daemon1993/AroundCircleView/blob/master/ui.jpg)
 
 
 android studio gradle使用
 
     compile 'com.daemon:aroundcircleview2:1.0.1'
  
+	
          textBgColor 初始线条颜色 一般为白色
+	 demo里面有背景虚化 一般音乐播放器都这样
+
 	<com.daemon.aroundcircleview.AroundCircleView
         android:id="@+id/acv_icon"
         android:layout_width="100dp"
