@@ -64,7 +64,7 @@
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/831873-b0ece0afb3cea8bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-![GIF.gif](http://upload-images.jianshu.io/upload_images/831873-363ecadadc4394ac.gif?imageMogr2/auto-orient/strip)
+![GIF.gif](https://github.com/Daemon1993/AroundCircleView/blob/master/GIF.gif)
 
 [github地址](https://github.com/Daemon1993/AroundCircleView)
 
