@@ -20,7 +20,7 @@
         app:textSize="10dp" />
 
 
-  ### 直接使用acvIcon.setProgress(progress);即可更新
+- 直接使用acvIcon.setProgress(progress);即可更新
   
  
 - 更新进度条 利用Hanlder更新即可
