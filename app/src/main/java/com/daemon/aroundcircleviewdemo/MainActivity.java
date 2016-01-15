@@ -44,26 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         Bitmap image = ((BitmapDrawable)acvIcon.getDrawable()).getBitmap();
 
-        //透明度动画
-        animator1 = ObjectAnimator.ofFloat(rl_bg, "alpha", 0.2f, 1.0f);
-        animator1.setDuration(2000);
-        animator1.setInterpolator(new AccelerateDecelerateInterpolator());
+        //背景图像虚化
+        blurBG(image);
 
+        progress=50;
+        acvIcon.setProgress(progress);
 
-        Bitmap bitmap = BitmapBlurHelper.doBlurJniBitMap(image, 50, false);
-
-        if (bitmap == null) {
-            //获取背景图片失败  使用默认黑色背景 需要图片
-            return;
-        }
-        BitmapDrawable drawable = new BitmapDrawable(getResources(), bitmap);
-
-        rl_bg.setBackgroundDrawable(drawable);
-
-        animator1.start();
-
-
-
+        //更新进度条
         new Thread(new Runnable() {
 
 
@@ -84,6 +71,30 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
 
+
+    }
+
+
+    private void blurBG(Bitmap image) {
+
+
+        //透明度动画
+        animator1 = ObjectAnimator.ofFloat(rl_bg, "alpha", 0.2f, 1.0f);
+        animator1.setDuration(2000);
+        animator1.setInterpolator(new AccelerateDecelerateInterpolator());
+
+
+        Bitmap bitmap = BitmapBlurHelper.doBlurJniBitMap(image, 50, false);
+
+        if (bitmap == null) {
+            //获取背景图片失败  使用默认黑色背景 需要图片
+            return;
+        }
+        BitmapDrawable drawable = new BitmapDrawable(getResources(), bitmap);
+
+        rl_bg.setBackgroundDrawable(drawable);
+
+        animator1.start();
 
     }
 

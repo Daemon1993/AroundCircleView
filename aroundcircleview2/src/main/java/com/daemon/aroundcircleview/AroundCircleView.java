@@ -147,7 +147,8 @@ public class AroundCircleView extends ImageView {
          */
         int changeProgress = (int) (progress * 3.6);
         this.newAngle = changeProgress;
-        invalidate();
+        postInvalidate();
+
 
     }
 
