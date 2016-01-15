@@ -18,8 +18,8 @@
         android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:src="@mipmap/pas"
-        app:textColor="#456789"
-        app:textBgColor="#00ff00"
+        android:src="@mipmap/head"
+        app:textColor="@color/colorAccent"
+        app:textBgColor="#000000"
         app:textSize="2dp" />
 </RelativeLayout>

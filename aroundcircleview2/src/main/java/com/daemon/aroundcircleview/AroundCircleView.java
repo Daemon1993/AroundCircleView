@@ -272,15 +272,13 @@ public class AroundCircleView extends ImageView {
         mBitmapHeight = mBitmap.getHeight();
         mBitmapWidth = mBitmap.getWidth();
 
-
         mBorderRect.set(mBorderWidth, mBorderWidth, getWidth() - mBorderWidth, getHeight() - mBorderWidth);
 
-        mDrawableRect.set(mBorderWidth, mBorderWidth, mBorderRect.width()
-                - mBorderWidth, mBorderRect.height() - mBorderWidth);
+        mDrawableRect.set(mBorderWidth/2, mBorderWidth/2, mBorderRect.width()
+                - mBorderWidth/2, mBorderRect.height() - mBorderWidth/2);
 
         mDrawableRadius = Math.min(mDrawableRect.height() / 2,
                 mDrawableRect.width() / 2);
-
 
         updateShaderMatrix();
         invalidate();

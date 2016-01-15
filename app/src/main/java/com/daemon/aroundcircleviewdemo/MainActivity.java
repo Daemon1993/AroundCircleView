@@ -1,5 +1,6 @@
 package com.daemon.aroundcircleviewdemo;
 
+import android.animation.ObjectAnimator;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -7,10 +8,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RelativeLayout;
 
 import com.daemon.aroundcircleview.AroundCircleView;
-import com.daemon.aroundcircleview.BitmapBlurHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,24 +31,37 @@ public class MainActivity extends AppCompatActivity {
     private boolean falg = true;
     private AroundCircleView acvIcon;
     private RelativeLayout rl_bg;
+    private ObjectAnimator animator1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         acvIcon = (AroundCircleView) findViewById(R.id.acv_icon);
+
         rl_bg = (RelativeLayout) findViewById(R.id.rl_bg);
-
-
-
 
         Bitmap image = ((BitmapDrawable)acvIcon.getDrawable()).getBitmap();
 
-        Bitmap bitmap = BitmapBlurHelper.doBlur(this, image, 6);
+        //透明度动画
+        animator1 = ObjectAnimator.ofFloat(rl_bg, "alpha", 0.2f, 1.0f);
+        animator1.setDuration(2000);
+        animator1.setInterpolator(new AccelerateDecelerateInterpolator());
 
-        BitmapDrawable drawable= new BitmapDrawable(getResources(),bitmap);
+
+        Bitmap bitmap = BitmapBlurHelper.doBlurJniBitMap(image, 50, false);
+
+        if (bitmap == null) {
+            //获取背景图片失败  使用默认黑色背景 需要图片
+            return;
+        }
+        BitmapDrawable drawable = new BitmapDrawable(getResources(), bitmap);
 
         rl_bg.setBackgroundDrawable(drawable);
+
+        animator1.start();
+
 
 
         new Thread(new Runnable() {
