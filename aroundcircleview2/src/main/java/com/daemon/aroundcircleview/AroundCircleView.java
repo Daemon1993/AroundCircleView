@@ -275,9 +275,11 @@ public class AroundCircleView extends ImageView {
 
         mBorderRect.set(mBorderWidth, mBorderWidth, getWidth() - mBorderWidth, getHeight() - mBorderWidth);
 
+//         mDrawableRect.set(mBorderWidth/2, mBorderWidth/2, mBorderRect.width()
+//                 - mBorderWidth/2, mBorderRect.height() - mBorderWidth/2);
+        
         mDrawableRect.set(mBorderWidth/2, mBorderWidth/2, mBorderRect.width()
-                - mBorderWidth/2, mBorderRect.height() - mBorderWidth/2);
-
+                + mBorderWidth/2, mBorderRect.height() + mBorderWidth/2);
         mDrawableRadius = Math.min(mDrawableRect.height() / 2,
                 mDrawableRect.width() / 2);
 
